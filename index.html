@@ -8,6 +8,22 @@ document.write("<H3>Device Properties </H3><br>")
 
 
 
+// Web Server Identifies
+
+var webserv = "Dispositivo Desconocido";
+
+let getHost = window.location.hostname;
+
+if (getHost.match(/github/i)) webserv = "github";
+if (getHost.match(/cloudflare/i)) webserv = "cloudflare";
+
+if (getHost.match(/127.0.0.1/i)) webserv = "localhost";
+
+document.write("WS: "+ webserv+"<br><br>")
+
+
+
+
 
 // Just pass it to `UAParser`
 const parser = new UAParser();
