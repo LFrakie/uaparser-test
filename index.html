@@ -11,10 +11,36 @@ document.write("Device Properties "+"<br>"+"<br>"+"<br>")
 // Just pass it to `UAParser`
 const parser = new UAParser();
 
+
+
+
+
+
 // CPU
-document.write("CPU: ")
-document.write(parser.getCPU().architecture+"<br>"+"<br>")
-// { architecture: '' }
+
+let getCpu = parser.getCPU();
+// console.log('getCPU: '+ getCpu.architecture)
+
+if (getCpu.architecture===undefined) {
+    console.log('Se econtro undefined')
+
+    let altGetCpu = navigator.platform.replace(' ', '.')
+    document.write("CPU: ")
+    document.write(altGetCpu+"<br>"+"<br>")
+
+}else {
+    console.log('No se econtro undefined')
+
+    document.write("CPU: ")
+    document.write(getCpu.architecture+"<br>"+"<br>")
+    // { architecture: '' }
+}
+
+
+
+
+
+
 
 
 // DEVICE
