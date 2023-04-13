@@ -10,14 +10,17 @@ document.write("<H3>Device Properties </H3><br>")
 
 // Web Server Identifies
 
-var webserv = "Dispositivo Desconocido";
-
 let getHost = window.location.hostname;
 
 if (getHost.match(/github/i)) webserv = "GHP";
-if (getHost.match(/cloudflare/i)) webserv = "CFP";
+if (getHost.match(/pages/i)) webserv = "CFP";
+if (getHost.match(/netlify/i)) webserv = "NET";
+if (getHost.match(/vercel/i)) webserv = "VER";
 
-if (getHost.match(/127.0.0.1/i)) webserv = "localhost";
+
+
+if (getHost.match(/127.0.0.1/i)) webserv = "127.0.0.1";
+if (getHost.match(/localhost/i)) webserv = "localhost";
 
 document.write("WebServer: "+ webserv+"<br><br>")
 
