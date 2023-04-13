@@ -7,34 +7,10 @@
 document.write("<H3>Device Properties </H3><br>")
 
 
-console.log("Host: "+window.location.hostname);
-
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.log('WebServer: localhost - 127.0.0.1');
-      document.write("WebServer: localhost <br><br>")
-    } else {
-
-          fetch(window.location.href, { method: 'HEAD' })
-        .then(response => {
-          const serverHeader = response.headers.get('Server');
-          console.log('WebServer:', serverHeader);
-          document.write("WebServer: "+ serverHeader)
-        })
-        .catch(error => {
-          console.error('Error al obtener información del servidor:', error);
-        });
-    }
-
-
-
-
 
 
 // Just pass it to `UAParser`
 const parser = new UAParser();
-
-
-
 
 
 
@@ -137,15 +113,28 @@ console.log("=============================")
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
+    console.log("Host: "+window.location.hostname);
 
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          console.log('WebServer: localhost - 127.0.0.1');
+          document.write("WebServer: localhost <br><br>")
+        } else {
 
+              fetch(window.location.href, { method: 'HEAD' })
+            .then(response => {
+              const serverHeader = response.headers.get('Server');
+              console.log('WebServer:', serverHeader);
+              document.write("WebServer: "+ serverHeader)
+            })
+            .catch(error => {
+              console.error('Error al obtener información del servidor:', error);
+            });
+        }
 
+</script> -->
 
-
-
-</script>
 </body>
 
 
