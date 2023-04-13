@@ -72,20 +72,30 @@ function verifyDesktop(){
 
 // OS
 document.write("OS: ")
-document.write(parser.getOS().name+"<br>"+"<br>")
+document.write(parser.getOS().name+"<br><br>")
 // { name: '', version: '' }
 
 
 // BROWSER
 document.write("BROWSER: ")
-document.write(parser.getBrowser().name+"<br>"+"<br>")
+document.write(parser.getBrowser().name+"<br><br>")
 // { name: '', version: '', major: '' }
 
 
 // HTML RENDER ENGINE
 document.write("ENGINE: ")
-document.write(parser.getEngine().name)
+document.write(parser.getEngine().name+"<br><br>")
 // { name : "Blink", version : "110.0.5481.153" }
+
+
+
+
+//  ALL DATA AGENT
+let UA_alldata = navigator.userAgent.replace(/;/g, '');
+document.write("UA-AllData: ")
+document.write(UA_alldata)
+
+
 
 
 console.log("=============================")
