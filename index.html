@@ -8,6 +8,12 @@ document.write("<H3>Device Properties </H3><br>")
 
 
 
+
+
+
+
+
+
 // Just pass it to `UAParser`
 const parser = new UAParser();
 
@@ -29,7 +35,7 @@ if (getCpu.architecture===undefined) {
     document.write(altGetCpu+"<br><br>")
 
 }else {
-    console.log('No se econtro undefined')
+    console.log('No hay undefined')
 
     document.write("CPU: ")
     document.write(getCpu.architecture+"<br><br>")
@@ -93,7 +99,7 @@ document.write(parser.getEngine().name+"<br><br>")
 //  ALL DATA AGENT
 let UA_alldata = navigator.userAgent.replace(/;/g, '');
 document.write("UA-AllData: ")
-document.write(UA_alldata)
+document.write(UA_alldata+"<br><br>")
 
 
 
@@ -112,5 +118,36 @@ console.log("=============================")
 </head>
 <body>
 
+
+
+
+<script type="text/javascript">
+
+    if (window.location.hostname === 'localhost' || '127.0.0.1') {
+      console.log('La página se está cargando desde localhost - 127.0.0.1');
+      document.write("WebServer: localhost <br><br>")
+    } else {
+
+          fetch(window.location.href, { method: 'HEAD' })
+        .then(response => {
+          const serverHeader = response.headers.get('Server');
+          console.log('WebServer:', serverHeader);
+          document.write("WebServer: "+ serverHeader)
+        })
+        .catch(error => {
+          console.error('Error al obtener información del servidor:', error);
+        });
+      
+    }
+
+
+
+
+
+</script>
 </body>
+
+
+
+
 </html>
