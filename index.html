@@ -9,8 +9,8 @@ document.write("<H3>Device Properties </H3><br>")
 
 console.log("Host: "+window.location.hostname);
 
-    if (window.location.hostname === 'localhost' || '127.0.0.1') {
-      console.log('La página se está cargando desde localhost - 127.0.0.1');
+    if (window.location.hostname == 'localhost' || '127.0.0.1') {
+      console.log('WebServer: localhost - 127.0.0.1');
       document.write("WebServer: localhost <br><br>")
     } else {
 
