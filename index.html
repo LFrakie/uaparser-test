@@ -4,7 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/1.0.35/ua-parser.min.js"></script>
 <script>
 
-document.write("Device Properties "+"<br>"+"<br>"+"<br>")
+document.write("<H3>Device Properties </H3><br>")
 
 
 
@@ -26,13 +26,13 @@ if (getCpu.architecture===undefined) {
 
     let altGetCpu = navigator.platform.replace(' ', '.')
     document.write("CPU: ")
-    document.write(altGetCpu+"<br>"+"<br>")
+    document.write(altGetCpu+"<br><br>")
 
 }else {
     console.log('No se econtro undefined')
 
     document.write("CPU: ")
-    document.write(getCpu.architecture+"<br>"+"<br>")
+    document.write(getCpu.architecture+"<br><br>")
     // { architecture: '' }
 }
 
@@ -44,10 +44,31 @@ if (getCpu.architecture===undefined) {
 
 
 // DEVICE
-document.write("DEVICE: "+"<br>")
-document.write("Tipo: "+parser.getDevice().type+"<br>")
-document.write("Modelo: "+parser.getDevice().model+"<br>"+"<br>")
-// { type: '', vendor: '', model: '' }
+
+let getDevice = parser.getDevice();
+
+if (getDevice.type===undefined) {
+
+    verifyDesktop()
+
+} else {
+    document.write("DEVICE: "+"<br>")
+    document.write("Tipo: "+getDevice.type+"<br>")
+    document.write("Modelo: "+getDevice.model+"<br>"+"<br>")
+    // { type: '', vendor: '', model: '' }
+}
+
+
+function verifyDesktop(){
+    if (parser.getOS().name=="Windows") {
+        document.write("DEVICE: "+"<br>")
+        document.write("Tipo: PC"+"<br>")
+        document.write("Modelo: Generic"+"<br>"+"<br>")
+    }
+}
+
+
+
 
 // OS
 document.write("OS: ")
